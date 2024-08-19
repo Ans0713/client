@@ -8,12 +8,11 @@ const useLogin = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate(); // Add useNavigate here
-
   const loginUser = async (values) => {
     try {
       setError(null);
       setLoading(true);
-      const res = await fetch('http://localhost:3000/api/auth/login', {
+      const res = await fetch('https://server-dkm5.vercel.app/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
