@@ -39,7 +39,12 @@ const Login = () => {
           >
             Unlock your world!
           </Typography.Text>
-          <Form layout="vertical" onFinish={handleLogin} autoComplete="off">
+          <Form 
+            layout="vertical" 
+            onFinish={handleLogin} 
+            autoComplete="off"
+            style={{ textAlign: 'center' }} // Center align form contents
+          >
             <Form.Item
               label="Email"
               name="email"
@@ -50,7 +55,7 @@ const Login = () => {
                 },
                 {
                   type: 'email',
-                  message: 'The input is not valid E-mail!',
+                  message: 'The input is not a valid E-mail!',
                 },
               ]}
             >
@@ -86,7 +91,7 @@ const Login = () => {
             style={{ marginTop: '16px', display: 'block', textAlign: 'center' }}
           >
             Don't have an account?{' '}
-            <Link to="/">Create an account</Link>
+            <Link to="/register">Create an account</Link> {/* Corrected the link to point to /register */}
           </Typography.Text>
         </Col>
       </Row>

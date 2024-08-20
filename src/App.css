@@ -8,40 +8,62 @@
 }
 
 body {
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
 }
 
-.app{
+.app {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('./assets/back.jpeg') no-repeat center fixed;
-  background-size: cover; 
+  background: url('./assets/back.jpeg') no-repeat center center fixed;
+  background-size: cover;
 }
-
 
 /* Form Container */
 .form-container {
   display: flex;
+  flex-direction: row;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
 }
 
 /* Form Title and Slogan */
-.title, 
+.title,
 .slogan {
   text-align: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.slogan {
+  font-weight: 300;
+  color: #888;
 }
 
 /* Auth Image */
 .auth-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   border-radius: 0 8px 8px 0;
 }
 
 /* Profile Card */
 .profile-card {
   width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Avatar */
@@ -52,6 +74,7 @@ body {
 /* Username */
 .username {
   text-transform: capitalize;
+  font-weight: 600;
 }
 
 /* Profile Button */
@@ -62,11 +85,27 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .app {
+    padding: 20px;
+  }
+
   .form-container {
     flex-direction: column;
+    box-shadow: none;
+    border-radius: 8px;
+  }
+
+  .auth-image {
+    display: none;
   }
 
   .profile-card {
-    width: 90%;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .title,
+  .slogan {
+    text-align: center;
   }
 }

@@ -8,18 +8,48 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Retrieve user data from local storage
-    const storedData = JSON.parse(localStorage.getItem('user_data'));
-    if (storedData) {
-      const { userToken, user } = storedData;
-      setToken(userToken);
-      setUserData(user);
-      setIsAuthenticated(true);
-    }
+    const fetchTokenData = async () => {
+      const storedData = JSON.parse(localStorage.getItem('user_data'));
+      console.log('Stored Data:', storedData); // Debug line
+
+      if (storedData) {
+        const { userToken } = storedData;
+
+        if (userToken) {
+          try {
+            // Dynamically import jwt-decode
+            const jwtDecode = (await import('jwt-decode')).default;
+            // Decode the token to extract user data
+            const decodedToken = jwtDecode(userToken);
+            console.log('Decoded Token:', decodedToken); // Debug line
+
+            const user = {
+              name: decodedToken.name, // Example field from token payload
+              email: decodedToken.email, // Example field from token payload
+              role: decodedToken.role  // Example field from token payload
+            };
+
+            setToken(userToken);
+            setUserData(user);
+            setIsAuthenticated(true);
+          } catch (error) {
+            console.error('Error decoding token:', error); // Handle decoding errors
+            setToken(null);
+            setUserData(null);
+            setIsAuthenticated(false);
+          }
+        } else {
+          setToken(null);
+          setUserData(null);
+          setIsAuthenticated(false);
+        }
+      }
+    };
+
+    fetchTokenData();
   }, []);
 
   const login = (newToken, newData) => {
-    // Store user data in local storage
     localStorage.setItem(
       'user_data',
       JSON.stringify({ userToken: newToken, user: newData })
@@ -30,7 +60,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    // Clear user data from local storage
     localStorage.removeItem('user_data');
     setToken(null);
     setUserData(null);
@@ -44,13 +73,12 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the AuthContext
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  
+
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
-  
+
   return context;
 };

@@ -11,22 +11,26 @@ const App = () => {
 
   return (
     <div className='app'>
-    <Router>
-      <Routes>
-        <Route 
-          path="/" 
-          element={isAuthenticated ? <Navigate to='/dashboard' /> : <Register />} 
-        />
-        <Route 
-          path="/login" 
-          element={isAuthenticated ? <Navigate to='/dashboard' /> : <Login />} 
-        />
-        <Route 
-          path="/dashboard" 
-          element={isAuthenticated ? <Dashboard /> : <Navigate to='/login' />} 
-        />
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route 
+            path="/" 
+            element={isAuthenticated ? <Navigate to='/dashboard' /> : <Navigate to='/login' />} 
+          />
+          <Route 
+            path="/register" 
+            element={isAuthenticated ? <Navigate to='/dashboard' /> : <Register />} 
+          />
+          <Route 
+            path="/login" 
+            element={isAuthenticated ? <Navigate to='/dashboard' /> : <Login />} 
+          />
+          <Route 
+            path="/dashboard" 
+            element={isAuthenticated ? <Dashboard /> : <Navigate to='/login' />} 
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
