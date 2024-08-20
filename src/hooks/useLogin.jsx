@@ -12,7 +12,7 @@ const useLogin = () => {
     try {
       setError(null);
       setLoading(true);
-      const res = await fetch('https://client-ruby-ten-65.vercel.app/api/auth/login', {
+      const res = await fetch('https://server-dkm5.vercel.app/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
