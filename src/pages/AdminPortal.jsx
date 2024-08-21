@@ -29,6 +29,9 @@ const AdminPortal = () => {
     navigate('/courses'); // Redirect to the Courses page
   };
 
+  const handleTimetableClick = () => {
+    navigate('/timetable');
+  };
 
   const programOptions = [
     {
@@ -76,9 +79,9 @@ const AdminPortal = () => {
               Courses
             </li>
             <li className="menu-item">
-              <BookOutlined className="icon" />
-              Exams
-            </li>
+              <CalendarOutlined className="icon" onClick={handleTimetableClick} />
+              Time Table
+              </li>
             <li className="menu-item">
               <CalendarOutlined className="icon" />
               Live Sessions
@@ -88,8 +91,8 @@ const AdminPortal = () => {
               Payments
             </li>
             <li className="menu-item">
-              <CalendarOutlined className="icon" />
-              Time Table
+              <BookOutlined className="icon" />
+              Exams
             </li>
             <li className="menu-item">
               <FormOutlined className="icon" />

@@ -9,6 +9,7 @@ import Leave from './pages/Leave';
 import { useAuth } from './contexts/AuthContext';
 import AdminPortal from './pages/AdminPortal';
 import CoursesPage from './pages/Courses';
+import Timetable from './pages/TimeTable'; // Import Timetable component
 
 const App = () => {
   const { isAuthenticated } = useAuth();
@@ -41,14 +42,18 @@ const App = () => {
             path="/attendance" 
             element={isAuthenticated ? <Attendence /> : <Navigate to='/login' />} 
           />
-            <Route 
+          <Route 
             path="/leave" 
-            element={isAuthenticated ? <Leave /> : <Navigate to='/login' />} // Add this route
+            element={isAuthenticated ? <Leave /> : <Navigate to='/login' />} 
           />
           <Route 
             path="/courses" 
-            element={isAuthenticated ? <CoursesPage /> : <Navigate to='/login' />} // Add this route
+            element={isAuthenticated ? <CoursesPage /> : <Navigate to='/login' />} 
           />
+          <Route 
+            path="/timetable" 
+            element={isAuthenticated ? <Timetable /> : <Navigate to='/login' />} 
+          /> 
         </Routes>
       </Router>
     </div>
