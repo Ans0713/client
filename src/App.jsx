@@ -8,6 +8,7 @@ import Attendence from './pages/Attendence';
 import Leave from './pages/Leave'; 
 import { useAuth } from './contexts/AuthContext';
 import AdminPortal from './pages/AdminPortal';
+import CoursesPage from './pages/Courses';
 
 const App = () => {
   const { isAuthenticated } = useAuth();
@@ -43,6 +44,10 @@ const App = () => {
             <Route 
             path="/leave" 
             element={isAuthenticated ? <Leave /> : <Navigate to='/login' />} // Add this route
+          />
+          <Route 
+            path="/courses" 
+            element={isAuthenticated ? <CoursesPage /> : <Navigate to='/login' />} // Add this route
           />
         </Routes>
       </Router>

@@ -25,6 +25,11 @@ const AdminPortal = () => {
     navigate('/leave'); // Redirect to the Upload Leave Application page
   };
 
+  const handleCoursesClick = () => {
+    navigate('/courses'); // Redirect to the Courses page
+  };
+
+
   const programOptions = [
     {
       value: 'master-of-computer-application',
@@ -66,7 +71,7 @@ const AdminPortal = () => {
               <BookOutlined className="icon" />
               Upload Leave Application
             </li>
-            <li className="menu-item">
+            <li className="menu-item" onClick={handleCoursesClick} >
               <BookOutlined className="icon" />
               Courses
             </li>
