@@ -1,0 +1,29 @@
+.upload-leave-application-container {
+    width: 75%;
+    height: 65%;
+    margin-bottom: 7%;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form {
+    max-width: 600px;
+    margin: auto;
+    
+  }
+  
+  .submit-button {
+    width: 100%;
+  }
+  
+  .ant-upload-list-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ant-upload-list-item-info {
+    margin-left: 8px;
+  }
+  

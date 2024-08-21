@@ -4,7 +4,8 @@ import './App.css';
 import Register from './Auth/Register';
 import Login from './Auth/Login';
 import Dashboard from './pages/Dashboard';
-import Attendence from './pages/Attendence'; // Import Attendance page
+import Attendence from './pages/Attendence'; 
+import Leave from './pages/Leave'; 
 import { useAuth } from './contexts/AuthContext';
 import AdminPortal from './pages/AdminPortal';
 
@@ -38,6 +39,10 @@ const App = () => {
           <Route 
             path="/attendance" 
             element={isAuthenticated ? <Attendence /> : <Navigate to='/login' />} 
+          />
+            <Route 
+            path="/leave" 
+            element={isAuthenticated ? <Leave /> : <Navigate to='/login' />} // Add this route
           />
         </Routes>
       </Router>

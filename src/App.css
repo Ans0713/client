@@ -328,5 +328,44 @@ body {
   }
 }
 
+.upload-leave-application {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.leave-application-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.leave-application-form .ant-form-item-label > label {
+  font-weight: bold;
+}
+
+.leave-application-form .ant-upload {
+  width: 100%;
+}
+
+.leave-application-form .ant-upload-list {
+  margin-top: 10px;
+}
+
+.leave-application-form .ant-upload-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.leave-application-form .ant-upload-list-item-name {
+  flex: 1;
+}
+
+.leave-application-form .ant-upload-list-item-actions {
+  display: flex;
+  align-items: center;
+}
+
 
 

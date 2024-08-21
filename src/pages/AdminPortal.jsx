@@ -21,6 +21,10 @@ const AdminPortal = () => {
     navigate('/attendance'); // Correctly use navigate
   };
 
+  const handleUploadLeaveClick = () => {
+    navigate('/leave'); // Redirect to the Upload Leave Application page
+  };
+
   const programOptions = [
     {
       value: 'master-of-computer-application',
@@ -58,7 +62,7 @@ const AdminPortal = () => {
               <BookOutlined className="icon" />
               Attendance Record
             </li>
-            <li className="menu-item">
+            <li className="menu-item" onClick={handleUploadLeaveClick}>
               <BookOutlined className="icon" />
               Upload Leave Application
             </li>
