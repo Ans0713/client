@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Card, Typography, Row, Col, Button, Progress, Divider, List, Select, Calendar } from 'antd';
 import { UserOutlined, CalendarOutlined, BookOutlined, DollarOutlined, FormOutlined, MenuOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 import './AdminPortal.css'; // Import the CSS file for styling
 
 const AdminPortal = () => {
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
+  const navigate = useNavigate(); // Correctly initialize navigate here
 
   const toggleSidebar = () => {
     setSidebarCollapsed(!isSidebarCollapsed);
@@ -13,6 +15,10 @@ const AdminPortal = () => {
 
   const handleProgramChange = (value) => {
     setSelectedProgram(value);
+  };
+
+  const handleAttendanceClick = () => {
+    navigate('/attendance'); // Correctly use navigate
   };
 
   const programOptions = [
@@ -42,19 +48,19 @@ const AdminPortal = () => {
           <ul>
             <li className="menu-item">
               <BookOutlined className="icon" />
-              Programs
+              Dashboard
             </li>
             <li className="menu-item">
               <FormOutlined className="icon" />
-              Assignment Reports
+              Payment
+            </li>
+            <li className="menu-item" onClick={handleAttendanceClick}>
+              <BookOutlined className="icon" />
+              Attendance Record
             </li>
             <li className="menu-item">
               <BookOutlined className="icon" />
-              Exam Reports
-            </li>
-            <li className="menu-item">
-              <BookOutlined className="icon" />
-              Results
+              Upload Leave Application
             </li>
             <li className="menu-item">
               <BookOutlined className="icon" />
@@ -243,27 +249,17 @@ const AdminPortal = () => {
                 Pending Payment
               </Typography.Title>
               <Typography.Text type="secondary" strong className="text-large">
-                ₹31,500.00
+                $1200
               </Typography.Text>
-              <Typography.Text type="secondary" className="text-secondary">
-                Last Date: Aug 31, 2024
-              </Typography.Text>
-              <Typography.Text type="secondary" className="text-secondary">
-                Payment Type: Flow Fee
-              </Typography.Text>
-              <Button type="primary" className="button-primary" block>
-                Pay Now
-              </Button>
-            </Card>
-          </Col>
-        </Row>
-        <Row gutter={[16, 16]} className="card-row">
-          <Col xs={24} md={12}>
-            <Card bordered={false} className="card calendar-card">
-              <Typography.Title level={3} className="title">
-                Calendar
-              </Typography.Title>
-              <Calendar fullscreen={false} />
+              <div className="calendar-card">
+                <Typography.Title level={4} className="title">
+                  Calendar
+                </Typography.Title>
+                <Calendar
+                  fullscreen={false}
+                  className="calendar"
+                />
+              </div>
             </Card>
           </Col>
         </Row>

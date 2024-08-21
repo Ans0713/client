@@ -4,9 +4,9 @@ import './App.css';
 import Register from './Auth/Register';
 import Login from './Auth/Login';
 import Dashboard from './pages/Dashboard';
+import Attendence from './pages/Attendence'; // Import Attendance page
 import { useAuth } from './contexts/AuthContext';
 import AdminPortal from './pages/AdminPortal';
-
 
 const App = () => {
   const { isAuthenticated } = useAuth();
@@ -31,10 +31,14 @@ const App = () => {
             path="/dashboard" 
             element={isAuthenticated ? <Dashboard /> : <Navigate to='/login' />} 
           />
-           <Route 
+          <Route 
             path="/admin-portal" 
             element={isAuthenticated ? <AdminPortal /> : <Navigate to='/login' />} 
-            />
+          />
+          <Route 
+            path="/attendance" 
+            element={isAuthenticated ? <Attendence /> : <Navigate to='/login' />} 
+          />
         </Routes>
       </Router>
     </div>
