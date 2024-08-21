@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Typography, Card, Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons'; 
+import { UserOutlined } from '@ant-design/icons';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,6 +11,10 @@ const Dashboard = () => {
     const handleLogout = () => {
         logout();
         navigate('/login');
+    };
+
+    const handleWelcomeClick = () => {
+        navigate('/admin-portal');
     };
 
     // Debugging log
@@ -39,6 +43,9 @@ const Dashboard = () => {
                 </Typography.Text>
                 <Button size="large" type="primary" className="profile-btn" onClick={handleLogout} style={{ marginTop: '20px' }}>
                     Logout
+                </Button>
+                <Button size="large" type="default" className="welcome-btn" onClick={handleWelcomeClick} style={{ marginTop: '20px' }}>
+                    Welcome to Dashboard!
                 </Button>
             </div>
         </Card>
