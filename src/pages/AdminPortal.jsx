@@ -30,7 +30,7 @@ const AdminPortal = () => {
   };
 
   const handleTimetableClick = () => {
-    navigate('/timetable');
+    navigate('/timetable'); // Redirect to the Timetable page
   };
 
   const programOptions = [
@@ -74,12 +74,12 @@ const AdminPortal = () => {
               <BookOutlined className="icon" />
               Upload Leave Application
             </li>
-            <li className="menu-item" onClick={handleCoursesClick} >
+            <li className="menu-item" onClick={handleCoursesClick}>
               <BookOutlined className="icon" />
               Courses
             </li>
-            <li className="menu-item">
-              <CalendarOutlined className="icon" onClick={handleTimetableClick} />
+            < li className="menu-item" onClick={handleTimetableClick}>
+              <CalendarOutlined className="icon" />
               Time Table
               </li>
             <li className="menu-item">
