@@ -1,0 +1,9 @@
+.attendance-background {
+    background-image: url('../assets/attendence.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    height: 100%;
+    width: 100%;
+  }
+  

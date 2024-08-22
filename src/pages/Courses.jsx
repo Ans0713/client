@@ -1,6 +1,14 @@
 import React from 'react';
 import { Card, Row, Col, Typography, Button } from 'antd';
 import './Courses.css'; // Import your CSS file for styling
+import reactJS from '../assets/React JS.jpg'; 
+import advancedJS from '../assets/Advanced JavaScript.jpeg';
+import python from '../assets/Python Data Science.jpeg'; 
+import machine from '../assets/Machine Learning Basics.jpg'; 
+import webdev from '../assets/Web Development with Django.jpg'; 
+import ui from '../assets/user interface.jpg';
+import cloud from '../assets/Cloud Computing with AWS.jpg';
+
 
 const { Title, Text } = Typography;
 
@@ -8,22 +16,22 @@ const courses = [
   {
     title: 'React for Beginners',
     description: 'Learn the basics of React and build dynamic web applications.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
+    image: reactJS, // Use the imported image
   },
   {
     title: 'Advanced JavaScript',
     description: 'Dive deep into JavaScript and master advanced concepts.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
+    image: advancedJS, // Replace with actual image URL
   },
   {
     title: 'Python Data Science',
     description: 'Explore data science with Python and build data-driven solutions.',
-    image: './Python Data Science.jpeg', // Replace with actual image URL
+    image: python, // Replace with actual image URL
   },
   {
     title: 'Machine Learning Basics',
     description: 'Understand the fundamentals of machine learning and AI.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
+    image: machine, // Replace with actual image URL
   },
   {
     title: 'Introduction to Node.js',
@@ -33,17 +41,17 @@ const courses = [
   {
     title: 'Web Development with Django',
     description: 'Learn how to develop web applications using Django.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
+    image: webdev, // Replace with actual image URL
   },
   {
     title: 'UX/UI Design Principles',
     description: 'Understand the principles of user experience and interface design.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
+    image: ui, // Replace with actual image URL
   },
   {
     title: 'Cloud Computing with AWS',
     description: 'Explore cloud computing concepts and AWS services.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
+    image: cloud, // Replace with actual image URL
   },
 ];
 

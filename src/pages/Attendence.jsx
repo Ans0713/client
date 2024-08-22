@@ -3,6 +3,7 @@ import { Table, Button, Input, Space, DatePicker, Form, Typography, Row, Col, me
 import { SearchOutlined, ExportOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import * as XLSX from 'xlsx'; // For exporting to CSV
+import './Attendence.css'
 
 
 const { RangePicker } = DatePicker;
