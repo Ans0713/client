@@ -1,58 +1,111 @@
 .timetable-page-container {
-    padding: 3rem 2rem; /* Increased padding for better spacing */
-    background-color: #f4f5f7; /* Light background color for a clean look */
-    min-height: 80vh; /* Ensure sufficient height for content */
+    padding: 40px;
+    background: url('../assets/timetable.jpeg') no-repeat center center;
+    background-size: cover; /* Ensure the background covers the entire container */
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align content horizontally */
-    justify-content: center; /* Center align content vertically */
+    align-items: flex-start;
+    overflow-y: auto;
+    position: relative; /* Add positioning context for absolute child elements */
+  }
+  
+  .background-image {
+    position: absolute; /* Position the image absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; /* Ensure it stays behind other content */
   }
   
   .page-title {
-    margin-bottom: 2rem; /* Space below the title */
-    font-size: 2.5rem; /* Larger font size for prominence */
-    font-weight: bold;
-    color: #001529; /* Dark color for better contrast */
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1f1f1f;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 20px;
+    background-color: inherit;
+    z-index: 1;
   }
   
-  .timetable-table {
+  .timetable-row {
+    margin-bottom: 30px;
     width: 100%;
-    max-width: 1200px; /* Max width for large screens */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Clip content to the border radius */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   
-  .timetable-table .ant-table-thead > tr > th {
-    background-color: #001529; /* Dark background for header */
-    color: #fff; /* White text color for contrast */
-    font-weight: bold;
+  .timetable-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    padding: 20px;
+    margin-right: 20px;
+    width: calc(50% - 10px);
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  
+  .timetable-card-content {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .timetable-card table {
+    min-width: 600px;
+  }
+  
+  .timetable-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ant-collapse-header {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1f1f1f;
+  }
+  
+  .download-button {
+    background-color: #1890ff;
+    border-color: #1890ff;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  
+  .download-button:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+  
+  .ant-table-thead > tr > th {
+    background-color: #fafafa;
+    font-weight: 600;
     text-align: center;
   }
   
-  .timetable-table .ant-table-tbody > tr > td {
-    text-align: center; /* Center align table data */
+  .ant-table-tbody > tr > td {
+    text-align: center;
   }
   
-  .timetable-table .ant-table-cell {
-    padding: 1rem; /* Add padding for better readability */
+  .ant-collapse-content {
+    background-color: #ffffff;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
   }
   
-  .timetable-table .ant-table-bordered .ant-table-cell {
-    border-color: #d9d9d9; /* Lighter border color */
+  .ant-collapse-content {
+    max-height: 0;
   }
   
-  .ant-col {
-    padding: 0 16px; /* Increased padding for columns */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .page-title {
-      font-size: 2rem; /* Smaller font size on smaller screens */
-    }
-  
-    .timetable-table {
-      font-size: 0.875rem; /* Adjust font size for smaller screens */
-    }
+  .ant-collapse-content.ant-collapse-content-active {
+    max-height: 1000px; /* Ensure this value is large enough to fit the content */
   }
   
