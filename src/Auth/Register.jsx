@@ -31,6 +31,7 @@ const Register = () => {
   });
 
   return (
+    <div class="app register-page">
     <Card className="form-container" style={{ maxWidth: '800px', margin: 'auto', padding: '20px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         {/* Form Section */}
@@ -124,6 +125,7 @@ const Register = () => {
         </div>
       </div>
     </Card>
+    </div>
   );
 };
 

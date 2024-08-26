@@ -18,6 +18,7 @@ const Login = () => {
   };
 
   return (
+    <div class="app login-page">
     <Card className="form-container" style={{ maxWidth: '800px', margin: 'auto', padding: '20px' }}>
       <Row justify="center" align="middle" gutter={[16, 16]}>
         <Col xs={24} md={12}>
@@ -96,6 +97,7 @@ const Login = () => {
         </Col>
       </Row>
     </Card>
+   </div>
   );
 };
 
