@@ -42,8 +42,6 @@ import {
       path: '/calendar', // Adjust path as needed
     },
   ];
-  
-  /// Analytics Cards Data for College Admin Portal
   import {
     UilUniversity,
     UilBookOpen,
@@ -51,7 +49,8 @@ import {
     UilUserCheck,
     UilBookReader,
   } from "@iconscout/react-unicons";
-export const cardsData = [
+  
+  export const cardsData = [
     {
       title: "Student Admissions",
       color: {
@@ -59,7 +58,7 @@ export const cardsData = [
         boxShadow: "0px 10px 20px 0px #A0C4FF",
       },
       barValue: 75,
-      value: "1,250",
+      value: "1250", // Clean value without any currency symbols
       description: "New Admissions This Month",
       png: UilUniversity, // Icon representing admissions
       series: [
@@ -76,7 +75,7 @@ export const cardsData = [
         boxShadow: "0px 10px 20px 0px #98FB98",
       },
       barValue: 85,
-      value: "A+",
+      value: "A+", // No currency symbol
       description: "Average Faculty Rating",
       png: UilBookOpen, // Icon representing faculty performance
       series: [
@@ -93,7 +92,7 @@ export const cardsData = [
         boxShadow: "0px 10px 20px 0px #FFB347",
       },
       barValue: 50,
-      value: "12",
+      value: "12", // Clean value without any currency symbols
       description: "Upcoming Events",
       png: UilCalendarAlt, // Icon representing campus events
       series: [
@@ -110,7 +109,7 @@ export const cardsData = [
         boxShadow: "0px 10px 20px 0px #D8BFD8",
       },
       barValue: 90,
-      value: "95%",
+      value: "95%", // No currency symbol
       description: "Average Attendance",
       png: UilUserCheck, // Icon representing student attendance
       series: [
@@ -127,7 +126,7 @@ export const cardsData = [
         boxShadow: "0px 10px 20px 0px #FFA07A",
       },
       barValue: 65,
-      value: "8,570",
+      value: "8570", // Clean value without any currency symbols
       description: "Books Issued This Month",
       png: UilBookReader, // Icon representing library usage
       series: [
@@ -138,6 +137,7 @@ export const cardsData = [
       ],
     },
   ];
+  
   
 // Updated College Notifications and Announcements Data
 export const UpdatesData = [

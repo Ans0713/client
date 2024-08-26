@@ -13,10 +13,6 @@ const Dashboard = () => {
         navigate('/login'); // Redirect to login after logout
     };
 
-    // const handleRedirect = () => {s
-    //     navigate('/adminportal'); // Redirect to admin portal page
-    // };
-
     return (
         <Card className='profile-card'>
             <Row justify='center' align='middle' gutter={16}>
@@ -37,9 +33,6 @@ const Dashboard = () => {
                     <br />
                     <Button size="large" type="primary" className="profile-btn" onClick={handleLogout}>
                         Logout
-                    </Button>
-                    <Button size="large" type="default" className="welcome-btn" onClick={handleRedirect}>
-                        Welcome to the Dashboard!
                     </Button>
                 </Col>
             </Row>

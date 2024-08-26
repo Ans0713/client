@@ -1,10 +1,9 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import Register from './Auth/Register';
 import Login from './Auth/Login';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';  // Assuming Dashboard is a .jsx or .js file
 import { useAuth } from './contexts/AuthContext';
 import MainDash from './components/MainDash/MainDash';
 import RightSide from './components/RightSide/RightSide';

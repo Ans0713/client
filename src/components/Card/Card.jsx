@@ -6,7 +6,6 @@ import { motion, LayoutGroup } from "framer-motion"; // Replace AnimateSharedLay
 import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
 
-
 // Parent Card
 const Card = (props) => {
   const [expanded, setExpanded] = useState(false);
@@ -43,7 +42,7 @@ function CompactCard({ param, setExpanded }) {
       </div>
       <div className="detail">
         <Png />
-        <span>${param.value}</span>
+        <span>{param.value}</span> {/* Dollar sign removed */}
         <span>Last 24 hours</span>
       </div>
     </motion.div>
