@@ -1,0 +1,55 @@
+.Updates {
+    width: 80%; /* Adjusted width to fit within a square container */
+    max-width: 400px; /* Set a max width for better control on larger screens */
+    background: #f9f9f9; /* Light background for better readability */
+    border-radius: 0.7rem;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px; /* Slightly larger font size for better readability */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for visual depth */
+    margin: auto; /* Center the container horizontally */
+    height: 400px; /* Set a fixed height to create a square container */
+    overflow-y: auto; /* Add scroll if content exceeds the height */
+}
+
+.update {
+    display: flex;
+    gap: 0.8rem; /* Increased gap for better separation */
+    align-items: center; /* Align items vertically centered */
+    border-bottom: 1px solid #e0e0e0; /* Light border for separation between items */
+    padding-bottom: 0.8rem; /* Add padding for spacing */
+    margin-bottom: 0.8rem; /* Add margin for spacing */
+}
+
+.update img {
+    width: 4rem; /* Slightly larger image for better visibility */
+    height: 4rem;
+    border-radius: 50%; /* Rounded image for a more polished look */
+    object-fit: cover; /* Ensure image covers its container */
+}
+
+.noti {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    justify-content: center; /* Center text vertically */
+}
+
+.noti > div {
+    margin-bottom: 0.5rem; /* Space between title and description */
+}
+
+.noti > div > span:nth-of-type(1) {
+    font-weight: bold;
+    color: #333; /* Darker color for better readability */
+}
+
+.noti > div > span:nth-of-type(2) {
+    color: #555; /* Slightly lighter color for description */
+}
+
+.noti > span {
+    font-size: 12px; /* Smaller font size for timestamp */
+    color: #888; /* Gray color for timestamp */
+}

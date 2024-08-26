@@ -1,0 +1,28 @@
+.Table {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background for the table container */
+    border-radius: 8px;
+  }
+  
+  .Table h3 {
+    margin-bottom: 20px;
+    color: #333; /* Darker color for the heading */
+  }
+  
+  .status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .Details {
+    cursor: pointer;
+    color: #007bff; /* Bootstrap blue color for "Details" */
+    text-decoration: underline;
+  }
+  
+  .Details:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  

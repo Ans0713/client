@@ -1,0 +1,12 @@
+.CollegePerformance {
+    background: #f5f5f5; /* Light background for better readability */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .CollegePerformance h2 {
+    margin-bottom: 20px;
+    color: #333; /* Dark text for the heading */
+  }
+  

@@ -1,3 +1,4 @@
+/* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
@@ -8,12 +9,10 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
   background-color: #f0f2f5;
 }
 
+/* App Container */
 .app {
   display: flex;
   align-items: center;
@@ -26,7 +25,6 @@ body {
 /* Form Container */
 .form-container {
   display: flex;
-  flex-direction: row;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
@@ -42,6 +40,8 @@ body {
 
 .title {
   font-weight: 600;
+  font-size: 1.8rem;
+  color: #333;
 }
 
 .slogan {
@@ -59,313 +59,127 @@ body {
 
 /* Profile Card */
 .profile-card {
-  width: 500px;
+  max-width: 500px;
+  margin: auto;
   padding: 20px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Avatar */
 .avatar {
   margin-bottom: 1.5rem;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Username */
 .username {
+  text-align: center;
   text-transform: capitalize;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Email and Role */
+.email-role {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.email-role .email {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.email-role .role {
+  font-size: 0.875rem;
+  color: #777;
 }
 
 /* Profile Button */
 .profile-btn {
-  margin-top: 1.3rem;
+  margin-top: 1rem;
   width: 100%;
-}
-
-/* app.css */
-.admin-portal-container {
-  display: flex;
-  height: 100vh;
-  background-color: #f5f5f5;
-}
-
-.sidebar {
-  width: 256px;
-  background-color: #c175aa;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logo-container {
-  padding: 16px;
-  text-align: center;
-}
-
-.logo {
-  width: 80px;
-  height: 80px;
-}
-
-.menu {
-  padding: 8px 16px;
-}
-
-.menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-item {
-  display: flex;
-  align-items: center;
-  padding: 8px 0;
-  color: #4a4a4a;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
-.menu-item:hover {
-  background-color: #874f70;
+.profile-btn:hover {
+  background-color: #0056b3;
 }
 
-.icon {
-  margin-right: 8px;
+/* App Glass Effect */
+:root {
+  --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+  --orange: #fca61f;
+  --black: #242d49;
+  --gray: #788097;
+  --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+  --pink: #FF919D;
+  --glass: rgba(255, 255, 255, 0.54);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  --activeItem: #f799a354;
 }
 
-.main-content {
-  flex: 1;
-  padding: 16px;
-}
-
-.title {
-  margin-bottom: 16px;
-}
-
-.card {
-  margin-bottom: 16px;
-}
-
-.card-content {
+.App {
+  padding: 0.5rem 3.5rem;
+  color: var(--black);
+  background: linear-gradient(
+    106.37deg,
+    #ffe1bc 29.63%,
+    #ffcfd1 51.55%,
+    #f3c6f1 90.85%
+  );
+  height: 100vh;
   display: flex;
+  width: 100vw;
   align-items: center;
   justify-content: center;
 }
 
-.icon-large {
-  font-size: 36px;
-  color: #1890ff;
-}
-
-.text-large {
-  font-size: 18px;
-}
-
-.progress-bar {
-  margin: 8px 0;
-}
-
-.sub-card {
-  margin-top: 16px;
-}
-
-.list-container {
-  margin-top: 16px;
-}
-
-.text-title {
-  font-size: 16px;
-}
-
-.button-primary {
-  margin-top: 16px;
-}
-
-.ml-2 {
-  margin-left: 8px;
-}
-
-.text-secondary {
-  font-size: 14px;
-  color: #888;
-}
-
-.text-small {
-  font-size: 12px;
-}
-
-.divider {
-  margin: 16px 0;
-}
-
-/* Sidebar Styles */
-.sidebar {
-  width: 250px;
-  background: #fff;
-  padding: 16px;
-  transition: width 0.3s;
-  position: fixed;
+.AppGlass {
+  display: grid;
   height: 100%;
-}
-
-.sidebar.collapsed {
-  width: 80px;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  max-width: 100px;
-}
-
-.sidebar-toggle {
-  font-size: 18px;
-}
-
-.menu {
-  margin-top: 16px;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.menu-item:hover {
-  background: plum;
-}
-
-.icon {
-  font-size: 18px;
-  margin-right: 10px;
-}
-
-.icon-large {
-  font-size: 24px;
-}
-
-/* Main Content Styles */
-.main-content {
-  margin-left: 250px;
-  padding: 20px;
-  transition: margin-left 0.3s;
-}
-
-.sidebar.collapsed + .main-content {
-  margin-left: 80px;
-}
-
-/* Card Styles */
-.card {
-  background: #f9f9f9;
-}
-
-.card-content {
-  text-align: center;
-}
-
-.button-primary {
-  margin-top: 10px;
-}
-
-/* Text Styles */
-.text-large {
-  font-size: 18px;
-}
-
-.text-small {
-  font-size: 14px;
-}
-
-.text-title {
-  font-size: 16px;
-}
-
-.text-secondary {
-  color: #8c8c8c;
-}
-
-.divider {
-  margin: 10px 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .app {
-    padding: 20px;
-  }
-
-  .form-container {
-    flex-direction: column;
-    box-shadow: none;
-    border-radius: 8px;
-  }
-
-  .auth-image {
-    display: none;
-  }
-
-  .profile-card {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .title,
-  .slogan {
-    text-align: center;
-  }
-}
-
-.upload-leave-application {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.leave-application-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.leave-application-form .ant-form-item-label > label {
-  font-weight: bold;
-}
-
-.leave-application-form .ant-upload {
   width: 100%;
+  background: var(--glass);
+  border-radius: 2rem;
+  gap: 16px;
+  grid-template-columns: 11rem auto 20rem;
+  overflow: auto;
 }
 
-.leave-application-form .ant-upload-list {
-  margin-top: 10px;
+@media screen and (max-width: 1200px) {
+  .AppGlass {
+    grid-template-columns: 10% 50% auto;
+  }
 }
 
-.leave-application-form .ant-upload-list-item {
-  display: flex;
-  align-items: center;
+@media screen and (max-width: 768px) {
+  .AppGlass {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .App{
+    padding: 0px;
+  }
 }
-
-.leave-application-form .ant-upload-list-item-name {
-  flex: 1;
-}
-
-.leave-application-form .ant-upload-list-item-actions {
-  display: flex;
-  align-items: center;
-}
-
-
-

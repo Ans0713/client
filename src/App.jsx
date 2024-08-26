@@ -1,21 +1,24 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import Register from './Auth/Register';
 import Login from './Auth/Login';
 import Dashboard from './pages/Dashboard';
-import Attendence from './pages/Attendence'; 
-import Leave from './pages/Leave'; 
 import { useAuth } from './contexts/AuthContext';
-import AdminPortal from './pages/AdminPortal';
-import CoursesPage from './pages/Courses';
-import Timetable from './pages/TimeTable'; // Import Timetable component
+import MainDash from './components/MainDash/MainDash';
+import RightSide from './components/RightSide/RightSide';
+import Sidebar from './components/Sidebar';
+import CoursesPage from './components/Courses/Courses';
+import Attendance from './components/Attendance/Attendance';
+import LeaveApplication from './components/LeaveApplication/LeaveApplication';
+import CalendarPage from './components/Calendar/Calendar';
 
 const App = () => {
   const { isAuthenticated } = useAuth();
 
   return (
-    <div className='app'>
+    <div className="App">
       <Router>
         <Routes>
           <Route 
@@ -32,28 +35,50 @@ const App = () => {
           />
           <Route 
             path="/dashboard" 
-            element={isAuthenticated ? <Dashboard /> : <Navigate to='/login' />} 
-          />
-          <Route 
-            path="/admin-portal" 
-            element={isAuthenticated ? <AdminPortal /> : <Navigate to='/login' />} 
-          />
-          <Route 
-            path="/attendance" 
-            element={isAuthenticated ? <Attendence /> : <Navigate to='/login' />} 
-          />
-          <Route 
-            path="/leave" 
-            element={isAuthenticated ? <Leave /> : <Navigate to='/login' />} 
+            element={isAuthenticated ? (
+              <div className="AppGlass">
+                <Sidebar />
+                <MainDash />
+                <RightSide />
+              </div>
+            ) : <Navigate to='/login' />} 
           />
           <Route 
             path="/courses" 
-            element={isAuthenticated ? <CoursesPage /> : <Navigate to='/login' />} 
+            element={isAuthenticated ? (
+              <div className="AppGlass">
+                <Sidebar />
+                <CoursesPage />
+              </div>
+            ) : <Navigate to='/login' />} 
           />
           <Route 
-            path="/timetable" 
-            element={isAuthenticated ? <Timetable /> : <Navigate to='/login' />} 
-          /> 
+            path="/attendance" 
+            element={isAuthenticated ? (
+              <div className="AppGlass">
+                <Sidebar />
+                <Attendance />
+              </div>
+            ) : <Navigate to='/login' />} 
+          />
+          <Route 
+            path="/leave-application" 
+            element={isAuthenticated ? (
+              <div className="AppGlass">
+                <Sidebar />
+                <LeaveApplication />
+              </div>
+            ) : <Navigate to='/login' />} 
+          />
+          <Route 
+            path="/calendar" 
+            element={isAuthenticated ? (
+              <div className="AppGlass">
+                <Sidebar />
+                <CalendarPage />
+              </div>
+            ) : <Navigate to='/login' />} 
+          />
         </Routes>
       </Router>
     </div>

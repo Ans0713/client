@@ -1,0 +1,25 @@
+.MainDash {
+    /* padding-top: 1rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .MainDash {
+        justify-content: flex-start;
+        margin-top: 2rem;
+        padding: 0 1rem; /* Add padding for better content spacing on medium screens */
+    }
+    }
+
+
+@media screen and (max-width: 768px) {
+    .MainDash {
+        /* align-items: center; */
+        justify-content: flex-center; /* Align items to the top for smaller screens */
+        padding: 0 1rem; /* Ensure content doesn't touch the screen edges */
+        margin-top: 1rem; /* Slight reduction in top margin */
+    }
+}

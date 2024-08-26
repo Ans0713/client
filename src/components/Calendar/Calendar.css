@@ -1,0 +1,6 @@
+/* src/pages/CalendarPage.css */
+.event-day {
+    background: #ffeb3b; /* Highlight color for days with events */
+    border-radius: 50%;
+  }
+  

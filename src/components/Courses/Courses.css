@@ -1,0 +1,48 @@
+.courses-container {
+  padding: 2rem;
+}
+
+.page-title {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.search-field {
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+.course-card {
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.course-card:hover {
+  transform: scale(1.02);
+}
+
+.course-title {
+  font-weight: bold;
+}
+
+.course-description {
+  margin-top: 0.5rem;
+}
+
+.course-instructor {
+  margin-top: 0.5rem;
+}
+
+.view-details-button {
+  margin-top: 1rem;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+}
+
+.view-details-button:hover {
+  background-color: #0056b3;
+}
