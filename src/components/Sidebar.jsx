@@ -6,11 +6,19 @@ import { SidebarData } from "../Data/Data"; // Update this with relevant data
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
   const [expanded, setExpanded] = useState(true);
   const navigate = useNavigate(); // Hook to programmatically navigate
+
+  const { userData, logout } = useAuth();
+
+    const handleLogout = async () => {
+        await logout();
+        navigate('/login'); // Redirect to login after logout
+    };
 
   const sidebarVariants = {
     true: { left: '0' },
@@ -58,6 +66,9 @@ const Sidebar = () => {
             </div>
           ))}
           {/* signoutIcon */}
+          <div className="menuItem" onClick={handleLogout}>
+          Logout
+          </div>
           <div className="menuItem">
             <UilSignOutAlt />
           </div>

@@ -3,10 +3,55 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .CollegePerformance h2 {
+    width: 90%; /* Default width */
+    max-width: 800px; /* Maximum width for larger screens */
+    margin: auto; /* Center the component horizontally */
+}
+
+/* Heading styles */
+.CollegePerformance h2 {
     margin-bottom: 20px;
     color: #333; /* Dark text for the heading */
-  }
-  
+    font-size: 1.5rem; /* Default font size for the heading */
+}
+
+/* Media queries for responsiveness */
+
+/* For medium screens (up to 1024px) */
+@media (max-width: 1024px) {
+    .CollegePerformance {
+        padding: 15px; /* Reduce padding on medium screens */
+    }
+
+    .CollegePerformance h2 {
+        font-size: 1.4rem; /* Slightly smaller font size for medium screens */
+        margin-bottom: 15px; /* Adjust margin for smaller screens */
+    }
+}
+
+/* For small screens (up to 768px) */
+@media (max-width: 768px) {
+    .CollegePerformance {
+        padding: 10px; /* Further reduce padding on small screens */
+        width: 50%; /* Increase width to fit smaller screens */
+    }
+
+    .CollegePerformance h2 {
+        font-size: 1.2rem; /* Smaller font size for small screens */
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+}
+
+/* For very small screens (up to 480px) */
+@media (max-width: 480px) {
+    .CollegePerformance {
+        padding: 8px; /* Minimal padding on very small screens */
+        width: 50%; 
+        justify-items: flex-start;
+    }
+
+    .CollegePerformance h2 {
+        font-size: 1rem; /* Smallest font size for very small screens */
+        margin-bottom: 8px; /* Adjust margin for very small screens */
+    }
+}
