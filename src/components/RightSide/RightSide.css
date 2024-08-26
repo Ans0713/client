@@ -1,7 +1,7 @@
 .RightSide{
     display: flex;
     flex-direction: column;
-    /* padding-top: 1rem; */
+    padding-top: 0.5rem;
     width: 95%;
     justify-content: space-evenly;
 }
@@ -19,10 +19,14 @@
     .RightSide{
         width: 100%;
         margin-top: 0;
+        margin-left: 5%;
     }
     .RightSide>div{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
+    }
+    .RightSide h3 {
+        margin: 1rem 0; 
     }
 }
