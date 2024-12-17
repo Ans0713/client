@@ -6,6 +6,7 @@ import {
     UilPackage,
     UilChart,
     UilSignOutAlt,
+    UilMoneyBill,
   } from "@iconscout/react-unicons";
   
   // Analytics Cards imports
@@ -41,125 +42,82 @@ import {
       heading: 'Calendar & Events',
       path: '/calendar', // Adjust path as needed
     },
+    {
+        icon: UilMoneyBill, // Updated icon
+        heading: 'Fees Payment',
+        path: '/fee-payment', // Adjust path as needed
+      },
   ];
-  import {
-    UilUniversity,
-    UilBookOpen,
-    UilCalendarAlt,
-    UilUserCheck,
-    UilBookReader,
-  } from "@iconscout/react-unicons";
+  import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+  import SchoolIcon from "@mui/icons-material/School";
+  import EventIcon from "@mui/icons-material/Event";
+  import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
   
   export const cardsData = [
     {
-      title: "Student Admissions",
+      title: "Student Profile",
+      description: "View and manage student profiles",
       color: {
-        backGround: "linear-gradient(180deg, #1E90FF 0%, #00BFFF 100%)",
-        boxShadow: "0px 10px 20px 0px #A0C4FF",
+        backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+        boxShadow: "0px 10px 20px 0px #e0c6f5",
       },
-      barValue: 75,
-      value: "1250", // Clean value without any currency symbols
-      description: "New Admissions This Month",
-      png: UilUniversity, // Icon representing admissions
-      series: [
-        {
-          name: "Admissions",
-          data: [150, 200, 250, 300, 350, 400, 450],
-        },
-      ],
+      png: AccountCircleIcon, // Material UI Icon for student profile
+      link: "/student-profile",
     },
     {
-      title: "Faculty Performance",
+      title: "Faculty Info",
+      description: "View faculty information and manage records",
       color: {
-        backGround: "linear-gradient(180deg, #32CD32 0%, #7CFC00 100%)",
-        boxShadow: "0px 10px 20px 0px #98FB98",
+        backGround: "linear-gradient(180deg, #ff919d 0%, #fc929d 100%)",
+        boxShadow: "0px 10px 20px 0px #fdc0c7",
       },
-      barValue: 85,
-      value: "A+", // No currency symbol
-      description: "Average Faculty Rating",
-      png: UilBookOpen, // Icon representing faculty performance
-      series: [
-        {
-          name: "Performance",
-          data: [90, 85, 88, 92, 95, 89, 94],
-        },
-      ],
+      png: SchoolIcon, // Material UI Icon for faculty info
+      link: "/faculty-info",
     },
     {
-      title: "Campus Events",
+      title: "Holidays Festives",
+      description: "View upcoming holidays",
       color: {
-        backGround: "linear-gradient(180deg, #FFA500 0%, #FF6347 100%)",
-        boxShadow: "0px 10px 20px 0px #FFB347",
+        backGround: "linear-gradient(180deg, #ffb74d 0%, #ff8a65 100%)",
+        boxShadow: "0px 10px 20px 0px #ffd3b5",
       },
-      barValue: 50,
-      value: "12", // Clean value without any currency symbols
-      description: "Upcoming Events",
-      png: UilCalendarAlt, // Icon representing campus events
-      series: [
-        {
-          name: "Events",
-          data: [2, 3, 1, 5, 2, 4, 3],
-        },
-      ],
+      png: EventIcon, // Material UI Icon for holidays
+      link: "/holidays",
     },
     {
-      title: "Student Attendance",
+      title: "Events Activities",
+      description: "Manage and view extracurricular activities",
       color: {
-        backGround: "linear-gradient(180deg, #8A2BE2 0%, #9370DB 100%)",
-        boxShadow: "0px 10px 20px 0px #D8BFD8",
+        backGround: "linear-gradient(180deg, #4caf50 0%, #81c784 100%)",
+        boxShadow: "0px 10px 20px 0px #a5d6a7",
       },
-      barValue: 90,
-      value: "95%", // No currency symbol
-      description: "Average Attendance",
-      png: UilUserCheck, // Icon representing student attendance
-      series: [
-        {
-          name: "Attendance",
-          data: [95, 94, 96, 97, 95, 93, 96],
-        },
-      ],
-    },
-    {
-      title: "Library Usage",
-      color: {
-        backGround: "linear-gradient(180deg, #FF4500 0%, #FF6347 100%)",
-        boxShadow: "0px 10px 20px 0px #FFA07A",
-      },
-      barValue: 65,
-      value: "8570", // Clean value without any currency symbols
-      description: "Books Issued This Month",
-      png: UilBookReader, // Icon representing library usage
-      series: [
-        {
-          name: "Library Usage",
-          data: [750, 820, 780, 900, 850, 870, 940],
-        },
-      ],
+      png: SportsSoccerIcon, // Material UI Icon for extracurricular activities
+      link: "/extracurricular-activities",
     },
   ];
   
   
 // Updated College Notifications and Announcements Data
-export const UpdatesData = [
-    {
-      img: img1, // Replace with actual image path
-      title: "Semester Exam Schedule Released",
-      description: "The exam schedule for the upcoming semester has been published.",
-      time: "25 seconds ago",
-    },
-    {
-      img: img2, // Replace with actual image path
-      title: "New Library Hours",
-      description: "The library will now be open from 8 AM to 8 PM..",
-      time: "30 minutes ago",
-    },
-    {
-      img: img3, // Replace with actual image path
-      title: "Guest Lecture on AI",
-      description: "A guest lecture on Artificial Intelligence will be held on Friday.",
-      time: "2 hours ago",
-    },
-  ];
+// export const UpdatesData = [
+//     {
+//       img: img1, // Replace with actual image path
+//       title: "Semester Exam Schedule Released",
+//       description: "The exam schedule for the upcoming semester has been published.",
+//       time: "25 seconds ago",
+//     },
+//     {
+//       img: img2, // Replace with actual image path
+//       title: "New Library Hours",
+//       description: "The library will now be open from 8 AM to 8 PM..",
+//       time: "30 minutes ago",
+//     },
+//     {
+//       img: img3, // Replace with actual image path
+//       title: "Guest Lecture on AI",
+//       description: "A guest lecture on Artificial Intelligence will be held on Friday.",
+//       time: "2 hours ago",
+//     },
+//   ];
 
   import course1Img from '../assets/Advanced JavaScript.jpeg';
 import course2Img from '../assets/React JS.jpg';
@@ -169,46 +127,35 @@ import course5Img from '../assets/user interface.jpg';
 import course6Img from '../assets/Web Development with Django.jpg';
 
 export const coursesData = [
-  {
-    id: 1,
-    title: 'Advanced JavaScript',
-    description: 'Deepen your understanding of JavaScript with advanced concepts and techniques.',
-    instructor: 'John Doe',
-    image: course1Img,
-  },
-  {
-    id: 2,
-    title: 'React JS',
-    description: 'Master React JS and build powerful front-end applications with this comprehensive course.',
-    instructor: 'Jane Smith',
-    image: course2Img,
-  },
-  {
-    id: 3,
-    title: 'Cloud Computing with AWS',
-    description: 'Learn about cloud computing and AWS to manage scalable applications and infrastructure.',
-    instructor: 'Emily Johnson',
-    image: course3Img,
-  },
-  {
-    id: 4,
-    title: 'Python Data Science',
-    description: 'Explore data science concepts using Python and learn how to analyze and visualize data.',
-    instructor: 'Michael Brown',
-    image: course4Img,
-  },
-  {
-    id: 5,
-    title: 'User Interface Design',
-    description: 'Design intuitive and attractive user interfaces with principles of UI/UX design.',
-    instructor: 'Sarah Davis',
-    image: course5Img,
-  },
-  {
-    id: 6,
-    title: 'Web Development with Django',
-    description: 'Build robust web applications with Django, a powerful Python web framework.',
-    instructor: 'David Wilson',
-    image: course6Img,
-  },
-];
+    {
+      id: 1,
+      title: 'Advanced JavaScript',
+      image: course1Img,
+    },
+    {
+      id: 2,
+      title: 'React JS',
+      image: course2Img,
+    },
+    {
+      id: 3,
+      title: 'Cloud Computing with AWS',
+      image: course3Img,
+    },
+    {
+      id: 4,
+      title: 'Python Data Science',
+      image: course4Img,
+    },
+    {
+      id: 5,
+      title: 'User Interface Design',
+      image: course5Img,
+    },
+    {
+      id: 6,
+      title: 'Web Development with Django',
+      image: course6Img,
+    },
+  ];
+  

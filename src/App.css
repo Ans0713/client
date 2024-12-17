@@ -194,7 +194,6 @@ body {
 }
 
 .App {
-  padding: 0.5rem 3.5rem;
   color: var(--black);
   background: linear-gradient(
     106.37deg,
@@ -203,10 +202,11 @@ body {
     #f3c6f1 90.85%
   );
   height: 100vh;
+  width: 100%;
   display: flex;
-  width: 100vw;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .AppGlass {
@@ -216,22 +216,48 @@ body {
   background: var(--glass);
   border-radius: 2rem;
   gap: 16px;
-  grid-template-columns: 11rem auto 20rem;
-  overflow: auto;
+  grid-template-columns: 1fr 2fr 1fr; /* Adjust grid columns */
+  overflow-y: auto; /* Only vertical scrolling if needed */
 }
 
 @media screen and (max-width: 1200px) {
   .AppGlass {
-    grid-template-columns: 10% 50% auto;
+    grid-template-columns: 1fr 2fr; /* Adjust grid columns for medium screens */
   }
 }
 
 @media screen and (max-width: 768px) {
   .AppGlass {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
     grid-template-rows: auto 1fr;
   }
-  .App{
+  .App {
     padding: 0px;
   }
 }
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: url('./assets/calendar & events.png')  ; 
+  background-size: cover; 
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between; /* Space between header elements */
+  align-items: center; /* Center align header items vertically */
+  margin-bottom: 16px; /* Space below the header */
+  background-image: url('./ribbon.png'); /* Background image for the ribbon effect */
+  background-size: cover; /* Ensure the image covers the entire header */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: top left; /* Position the image at the top-left corner */
+  position: relative; /* Ensure text overlays the background image properly */
+  color: black; /* White text color for contrast */
+  font-family: 'Dancing Script', cursive; /* Cursive font for the text */
+  font-style: italic; /* Italicize the text */
+  z-index: 1; /* Ensure the header content is above the background image */
+}
+

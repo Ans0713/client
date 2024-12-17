@@ -1,27 +1,47 @@
+/* Card Container */
+.CardContainer {
+    perspective: 1000px;
+    width: 13rem;
+    height: 12rem;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Apply flip effect on hover */
+.CardContainer:hover .CompactCard {
+    transform: rotateY(180deg);
+}
+
+.CardContainer:hover .BacksideCard {
+    transform: rotateY(0deg);
+}
+
+/* Front side (CompactCard) */
 .CompactCard {
     display: flex;
     flex: 1;
-    height: 10rem !important;
-    width: 11rem; /* Ensure square aspect ratio */
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 12rem; /* Ensure square aspect ratio */
+    padding: 0.75rem; /* Reduced padding for better fit */
     border-radius: 0.7rem;
     color: white;
-    padding: 0.75rem; /* Reduced padding for better fit */
-    position: relative;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease;
-}
-
-.CompactCard:hover {
-    box-shadow: none !important;
+    position: absolute; /* Positioned absolutely to stack on top of BacksideCard */
+    backface-visibility: hidden;
+    transition: transform 0.6s; /* Smooth flip transition */
+    transform: rotateY(0deg); /* Default front view */
 }
 
 /* Radial Bar */
 .radialBar {
     flex: 1;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 0.75rem; /* Slightly reduced gap */
+    gap: 0.5rem;
 }
 
 .CircularProgressbar {
@@ -66,11 +86,42 @@
     font-size: 11px; /* Slight reduction in font size */
 }
 
+/* Backside (BacksideCard) */
+.BacksideCard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg); /* Start with back side hidden */
+    backface-visibility: hidden;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    color: white;
+}
+
+/* Backside Card Content */
+.backTitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.backSubtitle {
+    font-size: 14px;
+    color: #ececec;
+}
+
+.backContent {
+    margin-top: 1rem;
+}
+
 /* ExpandedCard */
 .ExpandedCard {
     position: absolute;
-    width: 60%;
-    height: 70vh;
+    width: 0%;
+    height: 40vh;
     z-index: 9;
     left: 13rem;
     border-radius: 1rem;
@@ -100,30 +151,36 @@
     width: 70%;
 }
 
+/* Responsive adjustments */
 @media screen and (max-width: 1200px) {
     .ExpandedCard {
         top: 2rem;
         height: 45vh;
         left: 6rem;
-        width: 70%; /* Adjusting width for better fit */
+        width: 70%;
     }
-    
+
     .CompactCard {
-        height: 6rem; /* Slight reduction in height */
-        width: 6rem; /* Ensure square aspect ratio */
-        padding: 0.5rem; /* Reduce padding to fit content */
+        height: 6rem;
+        width: 6rem;
+        padding: 0.5rem;
     }
 
     .radialBar > span {
-        font-size: 13px; /* Slight reduction in font size */
+        font-size: 13px;
     }
 
     .detail > span:nth-child(2) {
-        font-size: 18px; /* Reduce font size */
+        font-size: 18px;
     }
 
     .detail > span:nth-child(3) {
-        font-size: 10px; /* Further reduce font size */
+        font-size: 10px;
+    }
+
+    .CardContainer {
+        width: 8rem;
+        height: 8rem;
     }
 }
 
@@ -132,54 +189,59 @@
         top: 8rem;
         height: 50%;
         left: 25px;
-        width: 90%; /* Better fit for smaller screens */
+        width: 90%;
     }
 
     .CompactCard {
-        height: 5rem; /* Height of the card */
-        width: 20rem; /* Width of the card */
-        flex-direction: column; /* Stack content vertically */
+        height: 5rem;
+        width: 20rem;
+        flex-direction: column;
         align-items: center;
-        padding: 0.5rem; /* Padding inside the card */
-        overflow: hidden; /* Prevent overflow */
-        margin: 1rem; /* Space between cards */
-        background: #333; /* Example background color */
-        color: #fff; /* Example text color */
-        border-radius: 0.5rem; /* Optional rounded corners */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional shadow */
+        padding: 0.5rem;
+        overflow: hidden;
+        margin: 1rem;
+        background: #333;
+        color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
-    
+
     .cards-container {
-        display: flex; /* Using flexbox for alignment */
-        flex-wrap: wrap; /* Allow cards to wrap onto multiple lines */
-        gap: 1rem; /* Space between cards */
-        justify-content: center; /* Center-align cards horizontally */
-    }
-    
-    .radialBar {
-        flex-direction: row; /* Adjust for smaller screen */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
         justify-content: center;
-        gap: 0.5rem; /* Reduce gap */
+    }
+
+    .radialBar {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
     }
 
     .radialBar > span {
-        font-size: 12px; /* Reduce font size */
+        font-size: 12px;
     }
 
     .detail {
-        align-items: center; /* Center-align on smaller screens */
-        overflow: hidden; /* Prevent overflow */
+        align-items: center;
+        overflow: hidden;
     }
 
     .detail > span:nth-child(2) {
-        font-size: 16px; /* Reduce font size */
+        font-size: 16px;
     }
 
     .detail > span:nth-child(3) {
-        font-size: 9px; /* Reduce font size */
+        font-size: 9px;
+    }
+
+    .CardContainer {
+        width: 6rem;
+        height: 6rem;
     }
 
     .chartContainer {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
     }
 }

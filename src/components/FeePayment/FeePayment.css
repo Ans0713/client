@@ -1,0 +1,10 @@
+.payment {
+    background-image: url('../../assets/PAYY.png'); /* Ensure the path is correct */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    width: 100%;
+    height: 100vh; /* Use viewport height for full-page height */
+    position: relative; /* Ensure children are positioned relative to this container */
+  }
+  

@@ -1,0 +1,7 @@
+.studentss {
+  background: url('../assets/studentbg.png') no-repeat center center fixed;
+  background-size: cover; /* Ensures the background covers the entire div */
+  height: 100vh;
+  width: 100%; /* Matches the height of the container */
+  overflow: auto; /* Allows scrolling for content overflow */
+}

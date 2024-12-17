@@ -1,6 +1,118 @@
-/* src/pages/CalendarPage.css */
-.event-day {
-    background: #ffeb3b; /* Highlight color for days with events */
-    border-radius: 50%;
-  }
-  
+/* src/Calendar.css */
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.app-bar {
+    background-color: #e91e63; /* Pink background for the app bar */
+}
+
+.menu-button {
+    margin-right: 16px; 
+}
+
+.app-title {
+    flex-grow: 1;
+    text-align: center;
+    color: black; 
+}
+
+.add-event-button {
+    margin-left: 16px; 
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    padding: 16px; /* Padding around the main content */
+}
+
+.calendar {
+    flex: 3; /* Calendar takes up 3 parts of the flex container */
+}
+
+.event-container {
+    flex: 1; /* Event container takes up 1 part of the flex container */
+    margin-left: 16px; /* Space between calendar and event container */
+}
+
+.calendar-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./ribbon.png'); /* Background image for the ribbon effect */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    z-index: -1; /* Position the background image underneath the text */
+}
+
+
+.navigation-buttons {
+    display: flex;
+    align-items: center; /* Align navigation buttons vertically */
+}
+
+.calendar-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Maintain the gap between calendar days */
+    justify-content: flex-start; /* Align cards to the start without extra space */
+}
+
+.calendar-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: calc(48% - 8px); /* Increase width to nearly half of the container */
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 12px;
+    position: relative;
+    background-color: #ffffff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+
+
+.calendar-day.event-day {
+    background-color: #fce4ec; /* Light pink background for days with events */
+}
+
+.calendar-day.today {
+    background-color: #f5f5f5; /* Light grey background for today's date */
+}
+
+.calendar-day-number {
+    font-size: 20px; /* Larger font size for day numbers */
+    font-weight: bold; /* Bold font for day numbers */
+}
+
+.event-dots {
+    position: absolute;
+    bottom: 8px; /* Space from the bottom of the day */
+    left: 8px; /* Space from the left of the day */
+}
+
+.event-dot {
+    background-color: #f50057; /* Pink background for event dots */
+    color: white; /* White text color for event dots */
+    border-radius: 4px; /* Rounded corners for event dots */
+    padding: 4px 8px; /* Padding inside event dots */
+    font-size: 12px; /* Font size for event dots */
+}
+
+.event-paper {
+    padding: 16px; /* Padding inside event paper */
+    border-radius: 8px; /* Rounded borders for event paper */
+    max-height: 100%; /* Prevent overflow beyond the container */
+    overflow-y: auto; /* Scroll vertically if content overflows */
+    background-color: #ffffff; /* White background for event paper */
+}

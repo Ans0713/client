@@ -12,6 +12,12 @@ import CoursesPage from './components/Courses/Courses';
 import Attendance from './components/Attendance/Attendance';
 import LeaveApplication from './components/LeaveApplication/LeaveApplication';
 import CalendarPage from './components/Calendar/Calendar';
+import FeePaymentPage from './components/FeePayment/FeePayment';
+import PayNowPage from './components/FeePayment/PayNow';
+import StudentProfile from './pages/StudentProfile';
+import ProfilePage from './pages/ProfilePage';
+import StudentPage from './pages/Student';
+
 
 const App = () => {
   const { isAuthenticated } = useAuth();
@@ -44,40 +50,42 @@ const App = () => {
           />
           <Route 
             path="/courses" 
-            element={isAuthenticated ? (
-              <div className="AppGlass">
-                <Sidebar />
-                <CoursesPage />
-              </div>
-            ) : <Navigate to='/login' />} 
+            element={isAuthenticated ? <CoursesPage /> : <Navigate to='/login' />} 
           />
+          
           <Route 
             path="/attendance" 
-            element={isAuthenticated ? (
-              <div className="AppGlass">
-                <Sidebar />
-                <Attendance />
-              </div>
-            ) : <Navigate to='/login' />} 
+            element={isAuthenticated ? <Attendance /> : <Navigate to='/login' />} 
           />
           <Route 
             path="/leave-application" 
-            element={isAuthenticated ? (
-              <div className="AppGlass">
-                <Sidebar />
-                <LeaveApplication />
-              </div>
-            ) : <Navigate to='/login' />} 
+            element={isAuthenticated ? <LeaveApplication /> : <Navigate to='/login' />} 
           />
           <Route 
             path="/calendar" 
-            element={isAuthenticated ? (
-              <div className="AppGlass">
-                <Sidebar />
-                <CalendarPage />
-              </div>
-            ) : <Navigate to='/login' />} 
+            element={isAuthenticated ? <CalendarPage /> : <Navigate to='/login' />} 
           />
+          <Route 
+            path="/fee-payment" 
+            element={isAuthenticated ? <FeePaymentPage /> : <Navigate to='/login' />} 
+          />
+          <Route 
+            path="/pay-now" 
+            element={isAuthenticated ? <PayNowPage /> : <Navigate to='/login' />} 
+          />
+          <Route 
+            path="/student-profile" 
+            element={isAuthenticated ? <StudentProfile /> : <Navigate to='/login' />} 
+          />
+             <Route 
+            path="/profile/:id"  // Parameterized route for ProfilePage
+            element={isAuthenticated ? <ProfilePage /> : <Navigate to='/login' />} 
+          />
+             <Route 
+            path="/student" 
+            element={isAuthenticated ? <StudentPage /> : <Navigate to='/login' />} 
+          />
+  
         </Routes>
       </Router>
     </div>

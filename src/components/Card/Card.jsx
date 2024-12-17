@@ -1,124 +1,120 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Card.css";
-import { CircularProgressbar } from "react-circular-progressbar";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { motion, LayoutGroup } from "framer-motion"; // Replace AnimateSharedLayout with LayoutGroup
+import { motion } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
-import Chart from "react-apexcharts";
+import { Link } from "react-router-dom";
 
 // Parent Card
 const Card = (props) => {
-  const [expanded, setExpanded] = useState(false);
+  const [flipped, setFlipped] = useState(false);
+
   return (
-    <LayoutGroup> {/* Updated */}
-      {expanded ? (
-        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
+    <motion.div
+      className={`CardContainer ${flipped ? "flipped" : ""}`}
+      layoutId="flipCard"
+      onClick={() => setFlipped(!flipped)}
+    >
+      {!flipped ? (
+        <CompactCard param={props} />
       ) : (
-        <CompactCard param={props} setExpanded={() => setExpanded(true)} />
+        <BacksideCard param={props} setFlipped={() => setFlipped(false)} />
       )}
-    </LayoutGroup>
+    </motion.div>
   );
 };
 
-// Compact Card
-function CompactCard({ param, setExpanded }) {
+// Compact Card (Front Side)
+function CompactCard({ param }) {
   const Png = param.png;
+  const progressValues = [50, 75, 30, 45]; // Define specific values
+  const [progressValue, setProgressValue] = useState(progressValues[0]); // Start with the first value
+
+  useEffect(() => {
+    // Function to animate progress to a specific value
+    const animateProgress = (endValue) => {
+      let start = progressValue;
+      const duration = 1000; // animation duration in ms
+      const stepTime = 50; // time between each step in ms
+
+      const step = () => {
+        start += ((endValue - progressValue) / duration) * stepTime;
+        if (start >= endValue) {
+          setProgressValue(endValue);
+        } else {
+          setProgressValue(Math.round(start));
+          requestAnimationFrame(step);
+        }
+      };
+
+      step();
+    };
+
+    // Cycle through the progressValues
+    let index = 0;
+    const cycleProgress = () => {
+      if (index < progressValues.length) {
+        animateProgress(progressValues[index]);
+        index++;
+        setTimeout(cycleProgress, 1500); // Delay before next value, adjust as needed
+      }
+    };
+
+    cycleProgress(); // Start the cycle
+
+  }, [param.barValue]); // Depend on param.barValue to restart animation if it changes
+
   return (
-    <motion.div
+    <div
       className="CompactCard"
       style={{
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layoutId="expandableCard"
-      onClick={setExpanded}
     >
       <div className="radialBar">
         <CircularProgressbar
-          value={param.barValue}
-          text={`${param.barValue}%`}
+          value={progressValue}
+          text={`${progressValue}%`}
+          styles={buildStyles({
+            pathTransitionDuration: 1, // Smooth transition
+            pathColor: `rgba(62, 152, 199, ${progressValue / 100})`,
+            textColor: "#fff",
+            trailColor: "#d6d6d6",
+            backgroundColor: "#3e98c7",
+          })}
         />
-        <span>{param.title}</span>
+        <span className="cardTitle">{param.title}</span>
       </div>
       <div className="detail">
-        <Png />
-        <span>{param.value}</span> {/* Dollar sign removed */}
-        <span>Last 24 hours</span>
+        <Png style={{ fontSize: "40px", color: "#fff" }} />
+        <span className="cardSubtitle">Last 24 hours</span>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
-// Expanded Card
-function ExpandedCard({ param, setExpanded }) {
-  const data = {
-    options: {
-      chart: {
-        type: "area",
-        height: "auto",
-      },
-
-      dropShadow: {
-        enabled: false,
-        top: 0,
-        left: 0,
-        blur: 3,
-        color: "#000",
-        opacity: 0.35,
-      },
-
-      fill: {
-        colors: ["#fff"],
-        type: "gradient",
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: "smooth",
-        colors: ["white"],
-      },
-      tooltip: {
-        x: {
-          format: "dd/MM/yy HH:mm",
-        },
-      },
-      grid: {
-        show: true,
-      },
-      xaxis: {
-        type: "datetime",
-        categories: [
-          "2018-09-19T00:00:00.000Z",
-          "2018-09-19T01:30:00.000Z",
-          "2018-09-19T02:30:00.000Z",
-          "2018-09-19T03:30:00.000Z",
-          "2018-09-19T04:30:00.000Z",
-          "2018-09-19T05:30:00.000Z",
-          "2018-09-19T06:30:00.000Z",
-        ],
-      },
-    },
-  };
-
+// Backside Card
+function BacksideCard({ param, setFlipped }) {
   return (
-    <motion.div
-      className="ExpandedCard"
+    <div
+      className="BacksideCard"
       style={{
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layoutId="expandableCard"
     >
       <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
-        <UilTimes onClick={setExpanded} />
+        <UilTimes onClick={setFlipped} />
       </div>
-      <span>{param.title}</span>
-      <div className="chartContainer">
-        <Chart options={data.options} series={param.series} type="area" />
+      <span className="backTitle">{param.title}</span>
+      <div className="backContent">
+        <Link to="/student-profile" className="linkToPage">
+          <span className="linkText">Go to {param.title}</span>
+        </Link>
       </div>
-      <span>Last 24 hours</span>
-    </motion.div>
+    </div>
   );
 }
 

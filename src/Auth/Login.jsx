@@ -29,17 +29,17 @@ const Login = () => {
           />
         </Col>
         <Col xs={24} md={12}>
-          <Typography.Title level={3} strong className="title" style={{ textAlign: 'center' }}>
+         {true? <Typography.Title level={3} strong className="title" style={{ textAlign: 'center' }}>
             Sign In
-          </Typography.Title>
+         </Typography.Title>:
           <Typography.Text 
-            type="secondary" 
+            type="secondary"  
             strong 
             className="slogan" 
             style={{ textAlign: 'center', display: 'block', marginBottom: '16px' }}
           >
             Unlock your world!
-          </Typography.Text>
+          </Typography.Text>}
           <Form 
             layout="vertical" 
             onFinish={handleLogin} 

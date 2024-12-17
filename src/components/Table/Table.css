@@ -5,8 +5,10 @@
     width: 100%; /* Ensure full width on all screen sizes */
     max-width: 100%; /* Prevent exceeding container width */
     box-sizing: border-box; /* Ensure padding is included in the width */
-    margin: auto; /* Center the table */
-    transition: padding 0.3s ease, width 0.3s ease; /* Smooth transitions */
+    margin-left: 0; /* Align to the left */
+    transition: padding 0.3s ease, width 0.3s ease, height 0.3s ease; /* Smooth transitions */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
 }
 
 .Table h3 {
@@ -41,6 +43,9 @@
 @media (max-width: 1024px) {
     .Table {
         padding: 14px; /* Further reduced padding */
+        width: 80%; /* Reduce width */
+        height: auto; /* Adjust height to fit content */
+        align-items: flex-start; /* Align items to the start (left) */
     }
 
     .Table h3 {
@@ -57,6 +62,9 @@
 @media (max-width: 768px) {
     .Table {
         padding: 12px; /* Further reduced padding on small screens */
+        width: 70%; /* Reduce width further */
+        height: auto; /* Adjust height to fit content */
+        align-items: flex-start; /* Align items to the start (left) */
     }
 
     .Table h3 {
@@ -77,14 +85,15 @@
 @media (max-width: 480px) {
     .Table {
         padding: 10px; /* Minimal padding on very small screens */
-        width: 100%; /* Ensure full width */
+        width: 50%; /* Reduce width even more for card-like appearance */
+        height: auto; /* Adjust height to fit content */
         margin-top: 15px;
+        align-items: flex-start; /* Align items to the start (left) */
     }
 
     .Table h3 {
-        font-size: 1.5rem; /* Smaller font size for very small screens */
-        margin-top: 10px;
-        margin-bottom: 5px; /* Adjust margin for very small screens */
+        font-size: 1rem; /* Smaller font size for very small screens */
+        margin-bottom: 10px; /* Adjust margin for very small screens */
     }
 
     .status {
@@ -95,5 +104,3 @@
         font-size: 0.85rem; /* Smaller font size for very small screens */
     }
 }
-
-  

@@ -1,8 +1,8 @@
 .Updates {
-    width: 80%; /* Adjusted width to fit within a square container */
+    width: 100%; /* Adjusted width to fit within a square container */
     max-width: 400px; /* Set a max width for better control on larger screens */
     background: #f9f9f9; /* Light background for better readability */
-    border-radius: 0.7rem;
+    border-radius: 2rem;
     padding: 1rem;
     gap: 1rem;
     display: flex;
@@ -10,8 +10,15 @@
     font-size: 14px; /* Slightly larger font size for better readability */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for visual depth */
     margin: auto; /* Center the container horizontally */
-    height: 400px; /* Set a fixed height to create a square container */
-    overflow-y: auto; /* Add scroll if content exceeds the height */
+    height: 350px; /* Set a fixed height to create a square container */
+    overflow-y: auto;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;
+; /* Add scroll if content exceeds the height */
+}
+
+.Updates::-webkit-scrollbar {
+    display: none;
 }
 
 /* Update styling */
@@ -80,7 +87,7 @@
 
 @media (max-width: 480px) {
     .Updates {
-        width: 45%; /* Full width on very small screens */
+        width: 40%; /* Full width on very small screens */
         height: auto; /* Remove fixed height */
         padding: 0.8rem; /* Reduce padding */
         margin: 0; /* Remove horizontal centering */
